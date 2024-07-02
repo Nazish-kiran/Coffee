@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  background-image: url(assets/hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+}
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.navbar .logo {
+    color: #fff;
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+.navbar .logo span {
+  color: #c06b3e;
+}
+.navbar .menu-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #c06b3e;
+}
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.hero-section .content {
+  color: #fff;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-section .content h1 {
+  text-transform: capitalize;
+  font-size: 3rem;
+  max-width: 600px;
+}
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+.hero-section .content button {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-top: 38px;
+  padding: 12px 30px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+.hero-section .content button:hover {
+  background-color: #c06b3e;
+}
+#menu-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+#close-btn {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+@media screen and (max-width: 850px) {
+  header {
+    padding: 10px 20px;
+  }
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+  #close-btn,
+  #menu-btn {
+    display: block;
+  }
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: -260px;
+    height: 100vh;
+    flex-direction: column;
+    background: #fff;
+    padding: 70px 40px 0;
+    transition: left 0.15s ease;
+    -webkit-transition: left 0.15s ease;
+    -moz-transition: left 0.15s ease;
+    -ms-transition: left 0.15s ease;
+    -o-transition: left 0.15s ease;
+  }
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+  .navbar a {
+    color: #000;
+  }
+  .hero-section .content {
+    text-align: center;
+  }
+  .hero-section .content:is(h1, p) {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}
